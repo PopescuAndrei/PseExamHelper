@@ -1,0 +1,93 @@
+<sections>
+    <!-- BATCH NUMERO 1 -->
+    <section title="1. Introduction">
+        <question type="single" path="/img/s1/q1.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s1/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s1/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s1/q4.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s1/q5.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s1/q6.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s1/q7.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+    </section>
+    
+    <section title="Chapter 2">
+        
+    </section>
+    
+    <section title="Chapter 3">
+        
+    </section>
+    
+    <section title="Example Section">
+        <question type="single" path="/img/s1/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s1/q2.png">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="input" path="/img/s1/q3.png">
+            <answers>
+                <answer type="right" value="4"/>
+            </answers>
+        </question>
+    </section>
+</sections>
