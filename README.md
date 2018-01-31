@@ -1,7 +1,11 @@
 # PseExamHelper
 This repository is intended as a helper for learning Machine Learning for the PSE Exam.
 
+**Build:** 
+Simplest method is to just run using netbeans or maven. Eclipse/Intellij may have problems since I used Netbean's WindowBuilder for its ease of use.
+
 **How to correctly populate it?**
+
 1. Take a screenshot of the quiz question.
 2. Name and place that screenshot in the appropriate folder. s1 for first section(chapter1), s2 for second and so on. The questions need to be named q1.png, q2.png,...
 3. Update the xml as follows:
