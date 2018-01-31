@@ -59,7 +59,41 @@
         </question>
     </section>
     
-    <section title="Chapter 2">
+    <section title="2. Linear Regression with One Variable">
+        <question type="input" path="/img/s2/q1.png">
+            <answers>
+                <answer type="right" value="4"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s2/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="input" path="/img/s2/q3.png">
+            <answers>
+                <answer type="right" value="3"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s2/q4.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s2/q5.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
         
     </section>
     
@@ -91,3 +125,9 @@
         </question>
     </section>
 </sections>
+<!--
+q1 - 4
+q2 - a
+q3 - 3
+q4 - c, d
+q5 - c-->

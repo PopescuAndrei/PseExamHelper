@@ -5,15 +5,11 @@
  */
 package ro.andrei.quiz.view;
 
-import java.io.File;
-import java.io.IOException;
+import java.awt.Color;
+import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+import java.util.Map;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import ro.andrei.quiz.model.Answer;
 import ro.andrei.quiz.model.Question;
@@ -37,18 +33,20 @@ public class QuizFrame extends javax.swing.JFrame {
     
     public QuizFrame(Section section) {
         initComponents();
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 
         this.section = section;
         this.questionNumber = 1; 
         this.score = 0.0;
         this.tScore = 0.0;
         
+        this.currentQNumber.setText(this.questionNumber + "");
+        this.totalQNumber.setText(section.getQuestionList().size() + "");
         this.currentScore.setText("0.0");
         this.totalScore.setText("0.0");
         
         answeredQuestions = new int[this.section.getQuestionList().size()];
-
+        infoTextArea.setEnabled(false);
+        infoTextArea.setDisabledTextColor(Color.BLACK);
         initQuestion();
     }
 
@@ -56,8 +54,8 @@ public class QuizFrame extends javax.swing.JFrame {
         currentQuestion = section.getQuestionList().get(questionNumber - 1);
         currentAnswers = currentQuestion.getAnswers();
         
-
         imageLabel.setIcon(new ImageIcon(this.getClass().getResource(currentQuestion.getPath())));
+        this.currentQNumber.setText(this.questionNumber + "");
 
         switch (currentQuestion.getType()) {
             case "single":
@@ -144,12 +142,16 @@ public class QuizFrame extends javax.swing.JFrame {
 
     private void computeScore() {
         double questionScore;
-        if (currentQuestion.getType().equals("single")) {
-            questionScore = checkSingle();
-        } else if (currentQuestion.getType().equals("multi")) {
-            questionScore = checkMulti();
-        } else {
-            questionScore = checkInput();
+        switch (currentQuestion.getType()) {
+            case "single":
+                questionScore = checkSingle();
+                break;
+            case "multi":
+                questionScore = checkMulti();
+                break;
+            default:
+                questionScore = checkInput();
+                break;
         }
         if(questionScore == 1.0) {
             answeredQuestions[questionNumber - 1] = 1;
@@ -168,6 +170,7 @@ public class QuizFrame extends javax.swing.JFrame {
 
         singleGroup = new javax.swing.ButtonGroup();
         imagePanel = new javax.swing.JPanel();
+        imageScrollPane = new javax.swing.JScrollPane();
         imageLabel = new javax.swing.JLabel();
         answersPanel = new javax.swing.JPanel();
         singleChoicePanel = new javax.swing.JPanel();
@@ -188,17 +191,26 @@ public class QuizFrame extends javax.swing.JFrame {
         selectionTypeLabel = new javax.swing.JLabel();
         checkButton = new javax.swing.JButton();
         nextButton = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        extraPanel = new javax.swing.JPanel();
         currentScoreLabel = new javax.swing.JLabel();
         currentScore = new javax.swing.JLabel();
         totalScoreLabel = new javax.swing.JLabel();
         totalScore = new javax.swing.JLabel();
+        infoPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        infoTextArea = new javax.swing.JTextArea();
+        hintLabel = new javax.swing.JLabel();
+        qNoLabel = new javax.swing.JLabel();
+        currentQNumber = new javax.swing.JLabel();
+        slashLabel = new javax.swing.JLabel();
+        totalQNumber = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         imagePanel.setBackground(new java.awt.Color(255, 255, 255));
 
         imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/s1/q5.PNG"))); // NOI18N
+        imageScrollPane.setViewportView(imageLabel);
 
         javax.swing.GroupLayout imagePanelLayout = new javax.swing.GroupLayout(imagePanel);
         imagePanel.setLayout(imagePanelLayout);
@@ -206,15 +218,15 @@ public class QuizFrame extends javax.swing.JFrame {
             imagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(imagePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
+                .addComponent(imageScrollPane)
                 .addContainerGap())
         );
         imagePanelLayout.setVerticalGroup(
             imagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(imagePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addComponent(imageScrollPane)
+                .addContainerGap())
         );
 
         answersPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -341,6 +353,11 @@ public class QuizFrame extends javax.swing.JFrame {
         selectionTypeLabel.setText("Selection Type:");
 
         checkButton.setText("Check Question");
+        checkButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkButtonMouseClicked(evt);
+            }
+        });
 
         nextButton.setText("Next Question");
         nextButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -387,7 +404,7 @@ public class QuizFrame extends javax.swing.JFrame {
                 .addGap(74, 74, 74))
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        extraPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         currentScoreLabel.setText("Score:");
 
@@ -397,36 +414,96 @@ public class QuizFrame extends javax.swing.JFrame {
 
         totalScore.setText("5");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        infoTextArea.setColumns(20);
+        infoTextArea.setRows(5);
+        jScrollPane1.setViewportView(infoTextArea);
+
+        hintLabel.setText("Info for Question");
+
+        javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
+        infoPanel.setLayout(infoPanelLayout);
+        infoPanelLayout.setHorizontalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(currentScoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(currentScore)
-                        .addGap(316, 316, 316))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(totalScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(hintLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        infoPanelLayout.setVerticalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(currentScoreLabel)
-                    .addComponent(currentScore))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalScoreLabel)
-                    .addComponent(totalScore))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(hintLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        qNoLabel.setText("Question No.");
+
+        currentQNumber.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        currentQNumber.setText("1");
+
+        slashLabel.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        slashLabel.setText("/");
+
+        totalQNumber.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        totalQNumber.setText("1");
+
+        javax.swing.GroupLayout extraPanelLayout = new javax.swing.GroupLayout(extraPanel);
+        extraPanel.setLayout(extraPanelLayout);
+        extraPanelLayout.setHorizontalGroup(
+            extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(extraPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(extraPanelLayout.createSequentialGroup()
+                        .addComponent(infoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(extraPanelLayout.createSequentialGroup()
+                        .addGroup(extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(extraPanelLayout.createSequentialGroup()
+                                .addComponent(currentScoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(currentScore)
+                                .addGap(80, 80, 80))
+                            .addGroup(extraPanelLayout.createSequentialGroup()
+                                .addComponent(totalScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(totalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(qNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(currentQNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(slashLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(totalQNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44))))
+        );
+        extraPanelLayout.setVerticalGroup(
+            extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(extraPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(extraPanelLayout.createSequentialGroup()
+                        .addGroup(extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(currentScoreLabel)
+                            .addComponent(currentScore))
+                        .addGap(40, 40, 40)
+                        .addGroup(extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(totalScoreLabel)
+                            .addComponent(totalScore)))
+                    .addComponent(qNoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(extraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(currentQNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(totalQNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(slashLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(infoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -438,7 +515,7 @@ public class QuizFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(answersPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(extraPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -449,7 +526,7 @@ public class QuizFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(answersPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(extraPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -482,18 +559,42 @@ public class QuizFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_nextButtonMouseClicked
 
+    private void checkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkButtonMouseClicked
+        hintLabel.setText("Info for Question: " + questionNumber);
+        String message = "From A->D or the value: ";
+        Map<Integer, String> shit = new HashMap<>();
+        shit.put(1, "A");
+        shit.put(2, "B");
+        shit.put(3, "C");
+        shit.put(4, "B");
+        for(int i=0; i<currentQuestion.getAnswers().size(); i++) {
+            if(!currentQuestion.getType().equals("input")) {
+                message += "\n" + shit.get(i+1) + ") " + currentQuestion.getAnswers().get(i).getType();
+            } else {
+                message += "\nAnswer: " + currentQuestion.getAnswers().get(i).getValue();
+            }
+        }
+        infoTextArea.setText(message);
+    }//GEN-LAST:event_checkButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel answersPanel;
     private javax.swing.JButton checkButton;
+    private javax.swing.JLabel currentQNumber;
     private javax.swing.JLabel currentScore;
     private javax.swing.JLabel currentScoreLabel;
+    private javax.swing.JPanel extraPanel;
+    private javax.swing.JLabel hintLabel;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JPanel imagePanel;
+    private javax.swing.JScrollPane imageScrollPane;
+    private javax.swing.JPanel infoPanel;
+    private javax.swing.JTextArea infoTextArea;
     private javax.swing.JTextField inputAnswer;
     private javax.swing.JLabel inputLabel;
     private javax.swing.JPanel inputPanel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel multiChoicePanel;
     private javax.swing.JCheckBox multiFirst;
     private javax.swing.JCheckBox multiFourth;
@@ -501,6 +602,7 @@ public class QuizFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox multiSecond;
     private javax.swing.JCheckBox multiThird;
     private javax.swing.JButton nextButton;
+    private javax.swing.JLabel qNoLabel;
     private javax.swing.JLabel selectionTypeLabel;
     private javax.swing.JPanel singleChoicePanel;
     private javax.swing.JRadioButton singleFirst;
@@ -509,6 +611,8 @@ public class QuizFrame extends javax.swing.JFrame {
     private javax.swing.JLabel singleLabel;
     private javax.swing.JRadioButton singleSecond;
     private javax.swing.JRadioButton singleThird;
+    private javax.swing.JLabel slashLabel;
+    private javax.swing.JLabel totalQNumber;
     private javax.swing.JLabel totalScore;
     private javax.swing.JLabel totalScoreLabel;
     // End of variables declaration//GEN-END:variables

@@ -50,6 +50,7 @@ public class MenuFrameController {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				QuizFrame qf = new QuizFrame(sections.get(sectionList.getSelectedIndex()));
+                                qf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 				qf.setVisible(true);
 			}
 
