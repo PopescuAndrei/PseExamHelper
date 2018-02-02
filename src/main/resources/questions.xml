@@ -94,23 +94,139 @@
                 <answer type="wrong"/>
             </answers>
         </question>
+    </section>
+    
+    <section title="3. Matrix Operations. Really Simple. No need to do anything">
         
     </section>
     
-    <section title="Chapter 3">
-        
+    <section title="4. Linear Regression with Multiple Variables">
+        <question type="input" path="/img/s4/q1.png">
+            <answers>
+                <answer type="right" value="-0.47"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s4/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s4/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s4/q4.PNG">
+            <answers><!-- NOT SURE OF THE ANSWER -->
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s4/q5.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="input" path="/img/s4/q6.png">
+            <answers>
+                <answer type="right" value="-0.47"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s4/q7.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s4/q8.PNG"> 
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s4/q9.PNG">
+            <answers><!-- NOT SURE OF THE ANSWER -->
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s4/q10.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
     </section>
     
-    <section title="Example Section">
-        <question type="single" path="/img/s1/q2.PNG">
+    <section title="5. Logistic Regression">
+        <question type="multi" path="/img/s5/q1.PNG">
             <answers>
                 <answer type="right"/>
                 <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s5/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
                 <answer type="wrong"/>
                 <answer type="wrong"/>
             </answers>
         </question>
-        <question type="multi" path="/img/s1/q2.png">
+        <question type="multi" path="/img/s5/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s5/q4.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s5/q5.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s5/q6.PNG">
+            <answers>   <!-- TODO check again -->
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s5/q7.PNG">
             <answers>
                 <answer type="right"/>
                 <answer type="right"/>
@@ -118,16 +234,175 @@
                 <answer type="wrong"/>
             </answers>
         </question>
-        <question type="input" path="/img/s1/q3.png">
+        <question type="multi" path="/img/s5/q8.PNG">
+            <answers> <!-- TODO check again -->
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s5/q9.PNG">
             <answers>
-                <answer type="right" value="4"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s5/q10.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
             </answers>
         </question>
     </section>
+    
+    
+    <section title="6. Regularization">
+        <question type="multi" path="/img/s6/q1.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s6/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s6/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s6/q4.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s6/q5.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+    </section>
+    
+    <section title="7. Neural Network Representation">
+        <question type="multi" path="/img/s7/q1.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s7/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s7/q3.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s7/q4.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s7/q5.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+    </section>
+    
+    <section title="8. Neural Networks Learning. Backpropagation">
+        <question type="single" path="/img/s8/q1.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s8/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s8/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s8/q4.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s8/q5.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+    </section>
+    
+<!--    c ok
+    a b ok
+    b d ok
+    c d ok
+    a d
+    
+    c ok
+    a c ok
+    b c ok
+    b d 
+    -->
+    <section title="9. Advice for Applying Machine Learning">
+        !-- TO DO -->
+    </section>
+    
 </sections>
-<!--
-q1 - 4
-q2 - a
-q3 - 3
-q4 - c, d
-q5 - c-->
