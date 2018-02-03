@@ -19,8 +19,8 @@
         </question>
         <question type="single" path="/img/s1/q3.PNG">
             <answers>
-                <answer type="wrong"/>
                 <answer type="right"/>
+                <answer type="wrong"/>
                 <answer type="wrong"/>
                 <answer type="wrong"/>
             </answers>
