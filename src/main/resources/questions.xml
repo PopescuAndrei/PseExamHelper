@@ -405,6 +405,46 @@
         !-- TO DO -->
     </section>
     
+    <section title="10. Machine Learning System Design">
+        <question type="input" path="/img/s10/q1.png">
+            <answers>
+                <answer type="right" value="0.09"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q3.PNG">
+            <answers> <!-- TODO NOT YER SURE -->
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q2.PNG">
+            <answers> <!-- NOT YER SURE -->
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q5.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+    </section>
+    
     <section title="11. Support Vector Machines">
         <question type="single" path="/img/s11/q1.PNG">
             <answers>
