@@ -590,6 +590,57 @@
             </answers>
         </question>
     </section>
+	
+	<section title="12. Unsupervised Learning">
+		<question type="multi" path="/img/s12/q1.PNG">
+            <answers>
+                <answer type="true"/>
+                <answer type="wrong"/>
+                <answer type="true"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+		<question type="single" path="/img/s12/q2.PNG">
+            <answers>
+                <answer type="wrong"/> 
+                <answer type="wrong"/>
+                <answer type="true"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+		<question type="multi" path="/img/s12/q3.PNG">
+            <answers>
+                <answer type="true"/> 
+                <answer type="wrong"/>
+                <answer type="true"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+		<question type="single" path="/img/s12/q4.PNG">
+            <answers>
+                <answer type="true"/> 
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+		<question type="multi" path="/img/s12/q5.PNG">
+            <answers>
+                <answer type="true"/> 
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="true"/>
+            </answers>
+        </question>
+			<question type="multi" path="/img/s12/q6.PNG">
+            <answers>
+                <answer type="true"/> 
+                <answer type="true"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+    </section>
 
     <section title="14. Anomaly Detection">
         <question type="multi" path="/img/s14/q1.PNG">
