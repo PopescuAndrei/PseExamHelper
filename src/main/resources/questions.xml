@@ -390,19 +390,118 @@
         </question>
     </section>
     
-<!--    c ok
-    a b ok
-    b d ok
-    c d ok
-    a d
-    
-    c ok
-    a c ok
-    b c ok
-    b d 
-    -->
     <section title="9. Advice for Applying Machine Learning">
-        !-- TO DO -->
+        <question type="single" path="/img/s9/q1.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s9/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s9/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s9/q4.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s9/q5.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s9/q6.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s9/q7.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s9/q8.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s9/q9.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
     </section>
     
+    <section title="10. Machine Learning System Design">
+        <question type="input" path="/img/s10/q1.png">
+            <answers>
+                <answer type="right" value="0.09"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q3.PNG">
+            <answers> <!-- TODO NOT YER SURE -->
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q2.PNG">
+            <answers> <!-- NOT YER SURE -->
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s10/q5.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+    </section>
 </sections>
