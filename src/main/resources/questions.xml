@@ -559,4 +559,47 @@
         </question>
     </section>
     
+    <section title="16. Large Scale Machine Learning">
+        <question type="single" path="/img/s16/q1.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s16/q2.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s16/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s16/q4.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s16/q5.PNG">
+            <answers>
+                <answer type="true"/>
+                <answer type="true"/>
+                <answer type="wrong"/>
+                <answer type="true"/>
+            </answers>
+        </question>
+    </section>
+    
 </sections>
