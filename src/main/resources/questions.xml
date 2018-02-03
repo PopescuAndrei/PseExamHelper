@@ -596,7 +596,7 @@
             </answers>
         </question>
         <question type="multi" path="/img/s14/q7.PNG">
-            <answers><!-- TODO REVIEW THIS -->
+            <answers>
                 <answer type="wrong"/>
                 <answer type="right"/>
                 <answer type="right"/>
@@ -614,6 +614,89 @@
         <question type="single" path="/img/s14/q9.PNG">
             <answers>
                 <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+    </section>
+
+    <section title="15. Recommender Systems">
+        <question type="multi" path="/img/s15/q1.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s15/q2.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s15/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s15/q4.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s15/q5.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s15/q6.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s15/q7.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s15/q8.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s15/q9.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s15/q10.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
                 <answer type="wrong"/>
             </answers>
         </question>
