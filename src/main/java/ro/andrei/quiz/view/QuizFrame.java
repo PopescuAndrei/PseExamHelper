@@ -566,7 +566,7 @@ public class QuizFrame extends javax.swing.JFrame {
         shit.put(1, "A");
         shit.put(2, "B");
         shit.put(3, "C");
-        shit.put(4, "B");
+        shit.put(4, "D");
         for(int i=0; i<currentQuestion.getAnswers().size(); i++) {
             if(!currentQuestion.getType().equals("input")) {
                 message += "\n" + shit.get(i+1) + ") " + currentQuestion.getAnswers().get(i).getType();
