@@ -487,5 +487,76 @@
             </answers>
         </question>
     </section>
+
+    <section title="14. Anomaly Detection">
+        <question type="multi" path="/img/s14/q1.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s14/q2.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s14/q3.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s14/q4.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s14/q5.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s14/q6.PNG">
+            <answers>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s14/q7.PNG">
+            <answers><!-- TODO REVIEW THIS -->
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="multi" path="/img/s14/q8.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+        <question type="single" path="/img/s14/q9.PNG">
+            <answers>
+                <answer type="right"/>
+                <answer type="wrong"/>
+            </answers>
+        </question>
+    </section>
     
 </sections>
