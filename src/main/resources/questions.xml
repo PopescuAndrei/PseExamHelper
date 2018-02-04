@@ -764,8 +764,8 @@
         </question>
         <question type="multi" path="/img/s15/q7.PNG">
             <answers>
-                <answer type="right"/>
                 <answer type="wrong"/>
+                <answer type="right"/>
                 <answer type="wrong"/>
                 <answer type="right"/>
             </answers>
